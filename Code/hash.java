@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hashs;
+package hashs; // Change to hash if yours was initially hash, mine package is different
 
 import java.util.*;
 
