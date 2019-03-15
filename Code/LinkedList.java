@@ -7,11 +7,10 @@ public class LinkedList {
     // This inner class is made static 
     // so that main() can access it 
     static class Node { 
-  
-       int data;
+       String data;
        Node next;
        
-       Node(int d){
+       Node(String d){
     	 data = d;
     	 next = null;
        }
@@ -22,13 +21,13 @@ public class LinkedList {
   
     
     // Method to insert a new node either in the head (if it is not null otherwise at the tail..) 
-    public static LinkedList insert(LinkedList list, int data) 
+    public LinkedList insert(LinkedList list, String data) 
     { 
        
     	Node new_node = new Node(data);
     	new_node.next = null;
     	
-        if (list.head ==null)
+        if (list.head == null)
         	list.head = new_node;
     
         else{
@@ -47,38 +46,32 @@ public class LinkedList {
       
   
     // Method to print the LinkedList. 
-    public static void printList(LinkedList list) 
-    { 
-      
+    public String printList(LinkedList list){ 
+    	
     	Node nodeCurr = list.head;
-        while(nodeCurr != null){
-          System.out.println(nodeCurr.data);
-          nodeCurr = nodeCurr.next;  
+    	String printout = nodeCurr.data;
+    	
+        while(nodeCurr.next != null){
+          nodeCurr = nodeCurr.next; 
+          printout = printout + " " + nodeCurr.data + " ";
         }
+        return printout;
     } 
    
+    public int countNode(LinkedList list){
+    	int counter = 0;
+    	Node nodeCurr = list.head;
+    	while(nodeCurr != null){
+    		counter++;
+    		nodeCurr = nodeCurr.next;
+    	}
+    	return counter;
+    }
+    
     // Driver code 
     public static void main(String[] args) 
     { 
-        /* Start with the empty list. */
-        LinkedList list = new LinkedList(); 
-  
-        // 
-        // ******INSERTION****** 
-        // 
-  
-        // Insert the values 
-        list = insert(list, 1); 
-        list = insert(list, 2); 
-        list = insert(list, 3); 
-        list = insert(list, 4); 
-        list = insert(list, 5); 
-        list = insert(list, 6); 
-        list = insert(list, 7); 
-        list = insert(list, 8); 
-  
-        // Print the LinkedList 
-        printList(list); 
+        
     } 
 	 
 }
