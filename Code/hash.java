@@ -175,7 +175,7 @@ public class hash {
         }*/
         
         
-       /*User-input method, search doesn't work for this
+       //User-input method, search doesn't work for this
         System.out.println("Enter the hash table size: ");
         Scanner input = new Scanner(System.in);
         
@@ -185,32 +185,43 @@ public class hash {
         System.out.println("Enter the "+ size + " elements: ");
         Scanner input2 = new Scanner(System.in);
        
-	        for(int i = 0; i<size; i++){
-	        	String k = (input2.next()).toString();
-	        	int x = Hashing.hashcompress1(k, size*2);
-	        	int y = Hashing.hashcompress2(k, size*2);
-	        	Hashing.insert(k, x, y);
-	        }*/
+        for(int i = 0; i<size; i++){
+            String k = input2.next();
+            int x = Hashing.hashcompress1(k, size*2);
+            int y = Hashing.hashcompress2(k, size*2);
+            Hashing.insert(k, x, y);
+        }
         
         //Hard-code String method, search works
-        hash Hashing = new hash(5);
+        
+        /*hash Hashing = new hash(5);
         String[] k = {"James", "Jack", "Jill", "Fred", "Richard"};
         
         for(int i = 0; i<5; i++){
         	int x = Hashing.hashcompress1(k[i], 10);
         	int y = Hashing.hashcompress2(k[i], 10);
         	Hashing.insert(k[i], x, y);
+       
         }
+        Hashing.search("Jill");
+        */
         
         
         System.out.println("The number of keys is "+ Hashing.getNumKeys());
         System.out.println("The size of the table is "+ Hashing.getTableSize());
         Hashing.printTable();
         
-        Hashing.search("Jill");
+        
+        
+        System.out.println("Enter element to search for: ");
+        Scanner input3 = new Scanner(System.in);
+        String search = input3.next();
+        
+        Hashing.search(search);
         
 
         long finalTime= System.currentTimeMillis(); // final time
-        System.out.println("Executed time in seconds: " + (finalTime - startTime)/1000);		
+        System.out.println("Executed time in seconds: " + (finalTime - startTime)/1000);
+        
 	}
 }
