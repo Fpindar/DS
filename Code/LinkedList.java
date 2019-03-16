@@ -1,3 +1,10 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hashs;
+
 	//Java program to implement 
 	//a Singly Linked List 
 import java.io.*; 
@@ -43,7 +50,19 @@ public class LinkedList {
         
         }
     
-      
+    public boolean FindNode(LinkedList list,String k){
+        
+        Node nodeCurr = list.head;
+        
+        while(nodeCurr != null){        
+          if(nodeCurr.data != k){
+          nodeCurr = nodeCurr.next;      
+        } else {
+                return true;    
+        }
+     }
+        return false;
+    }
   
     // Method to print the LinkedList. 
     public String printList(LinkedList list){ 
