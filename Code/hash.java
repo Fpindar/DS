@@ -1,3 +1,5 @@
+package DataAssignment;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -151,33 +153,24 @@ public class hash {
         /* Randomly-generated String method
          * String letters = "abcdefghijklmnopqrstuvwxyz"; // Create a String of the entire alphabet to help create random keys
         StringBuilder Key = new StringBuilder(5); // Creates a string builder of size 5 characters
-
-
         Scanner inp = new Scanner(System.in); // Initialize Scanner for input
         System.out.println("Enter the amount of keys: ");
-
         int size = inp.nextInt();  // Prompts user for input
         hash Hashing = new hash(size); // Constructs an object for the a specific size of keys
         String[] KeyHolders = new String[size]; // Creates an array just to store the keys generated
-
         for(int i = 0;i<Hashing.getNumKeys();i++){ // Creates random string keys based on the user input
             for(int x = 0; x < 5; x++){ // This loop creates a string of 5 character ex "tgasp"
                 int k = (int)(26*Math.random()); // This creates an int between 0-25 (index of the alphabet)
                 Key.append(letters.charAt(k)); // Takes the letter from the alphabet string using the index k
             }    
             System.out.println("String: " + Key); // prints the key
-
             String k = Key.toString(); // Concerts the stringbuilder into a string
-
             int x = Hashing.hashcompress1(k, (size*2)); // Calls first hash
             int y = Hashing.hashcompress2(k, (size*2)); // Calls Second hash
-
             System.out.println("First key is "+ x); // Shows first Calculated index
             System.out.println("Second key is "+ y); // Showed second Calculated index
-
             KeyHolders[i] = k; //Just hold the keys in array in the order generated incase we might need this for something(possibly searching?)     
             Hashing.insert(k, x, y); //Inserts the element 
-
             Key.setLength(0); // Resets key builders to 0 so the loop can create a new integer 
         }*/
         
@@ -191,7 +184,6 @@ public class hash {
         
         System.out.println("Enter the "+ size + " elements: ");
         Scanner input2 = new Scanner(System.in);
-
        
 	        for(int i = 0; i<size; i++){
 	        	String k = (input2.next()).toString();
