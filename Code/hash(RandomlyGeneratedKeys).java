@@ -168,9 +168,6 @@ public class hash {
        
                     // Concerts the stringbuilder into a string
                     String k = Key.toString(); 
-       
-                    // Calls first hash
-                    int x = Hashing.hashcompress1(k, (size*2)); 
                       
                     //Inserts the element
                     Hashing.insert(k); 
