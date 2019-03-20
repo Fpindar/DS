@@ -37,10 +37,10 @@ public class hash {
             }
             
             if(table[x].countNode() < table[y].countNode()) {
-                System.out.println("Inserting into bucket at index "+x);
+             //   System.out.println("Inserting into bucket at index "+x);
                 table[x].insert(k);
             } else {
-                System.out.println("Inserting into bucket at index "+y);
+             //   System.out.println("Inserting into bucket at index "+y);
                 table[y].insert(k);
             }             
         }
@@ -145,7 +145,7 @@ public class hash {
         Scanner input = new Scanner(System.in);
         
         int size = input.nextInt();
-        hash Hashing = new hash(size);
+        hash Hashing = new hash(size*2-3);
        
      // Randomly-generated String method
        
@@ -153,7 +153,7 @@ public class hash {
         for(int i = 0;i<Hashing.getNumKeys();i++){
        
            // This loop creates a string of 5 character ex "tgasp"
-           for(int x = 0; x < 5; x++){ 
+           for(int x = 0; x < 4; x++){ 
        
                 // This creates an int between 0-25 (index of the alphabet)
                 int k = (int)(26*Math.random()); 
@@ -164,11 +164,11 @@ public class hash {
            }
                     
                     // prints the key
-                    System.out.println("String: " + Key); 
+                   // System.out.println("String: " + Key); 
        
                     // Concerts the stringbuilder into a string
                     String k = Key.toString(); 
-                      
+       
                     //Inserts the element
                     Hashing.insert(k); 
        
@@ -179,14 +179,24 @@ public class hash {
         System.out.println("The number of keys is "+ Hashing.getNumKeys());
         System.out.println("The size of the table is "+ Hashing.getTableSize());
         Hashing.printTable();
+          
+        Scanner input3 = new Scanner(System.in);
+      
+        String search = "";
         
-        
+        while(true){
         
         System.out.println("Enter element to search for: ");
-        Scanner input3 = new Scanner(System.in);
-        String search = input3.next();
         
+        search = input3.next();
+        
+            if(search.equals("exit")){
+                break;
+            }
+            
         Hashing.search(search);
+        }
+        
         
 
         long finalTime= System.currentTimeMillis(); // final time
