@@ -172,7 +172,7 @@ public class hash {
                     //Inserts the element
                     Hashing.insert(k); 
        
-                    // Resets key builders to 0 so the loop can create a new integer 
+                    // Resets key builders to 0 so the loop can create a new String 
                     Key.setLength(0); 
         } 
            
