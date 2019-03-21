@@ -153,7 +153,7 @@ public class hash {
         for(int i = 0;i<Hashing.getNumKeys();i++){
        
            // This loop creates a string of 5 character ex "tgasp"
-           for(int x = 0; x < 4; x++){ 
+           for(int x = 0; x < 5; x++){ 
        
                 // This creates an int between 0-25 (index of the alphabet)
                 int k = (int)(26*Math.random()); 
